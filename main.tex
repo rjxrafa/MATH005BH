@@ -36,6 +36,82 @@ MATH 005BH - Single Variable Calculus II}
         \end{align*}
     
 \end{enumerate}
+
+\newpage
+\section{7.5 Techniques of Integration} 1-53 EOO
+
+\begin{enumerate}
+  \item $\int\frac{\cos{x}}{1-\sin{x}}dx$
+        \begin{align*}
+            u &= 1-\sin{x}\\\\
+            (-1)du &= \cos{x} dx\\\\
+            &=-\int\frac{du}{1-u}\\\\
+            &=-ln|1-\sin{x}|+C
+        \end{align*}
+    \addtocounter{enumi}{3}\item $\int \frac{t}{t^4+2}dt$
+        \begin{align*}
+            &= \int \frac{t}{(t^2)^2+2}dt & u &= t^2 & \frac{1}{2}du &= tdt\\\\
+            &= \frac{1}{2}\int \frac{du}{u^2+2} && \text{Use tangent identity here}\\\\
+            &= \frac{1}{2}\left[\left(\frac{1}{\sqrt{2}}\right)\tan^{-1}\left(\frac{t^2}{\sqrt{2}}\right)\right] +C\\\\
+            &= \frac{1}{2\sqrt{2}}\left[\tan^{-1}\left(\frac{t^2}{\sqrt{2}}\right)\right] + C \\
+        \end{align*}
+    \addtocounter{enumi}{3}\item $\int_{2}^{4}\frac{x+2}{x^2+3x-4}dx$
+        \begin{align*}
+             \int_{2}^{4}\frac{x+2}{(x+4)(x-1)}dx = \frac{A}{(x+4)}+\frac{B}{(x-1)}\\\\
+             x+2 = A(x-1) + B(x+4)\\
+             x(4) \xrightarrow{} -4+2=A(-5)+B(0) \xrightarrow{} A=\frac{2}{5}\\
+             x(1) \xrightarrow{} 1+2= A(0)+B(5) \xrightarrow{} B=\frac{3}{5}\\\\
+             \int_{2}^{4}\frac{x+2}{(x+4)(x-1)}dx = \int_{2}^{4}\frac{\frac{2}{5}}{(x+4)}dx+\int_{2}^{4}\frac{\frac{3}{5}}{(x-1)}dx\\\\
+             \frac{2}{5}\ln{\Big|x+4\Big|}_2^4+\frac{3}{5}\ln{
+             \Big|x-1\Big|}_2^4\\\\
+             \left(\frac{2}{5}\ln{8} - \frac{2}{5}\ln{6}\right) + \left(\frac{3}{5}\ln{3}-0\right) 
+         \end{align*}
+    \addtocounter{enumi}{3}\item $\int\sin^5{t}\cos^4t$
+        \begin{align*}
+            &=\int (\sin^2t)^2(\cos^2t)^2\sin{t}dt \\
+            &= -\int (1-u^2)^2(u^2)^2du &u &= \cos{t} &-du &= \sin{t}\\
+            &=-\int (1-2u^2+u^4)(u^4)du \\
+            &=-\int (u^4-2u^6+u^8)du \\
+            &=-\frac{\cos^5t}{5}+\frac{2\cos^7t}{7}-\frac{cos^9t}{9}+C
+        \end{align*}
+    
+    \newpage\addtocounter{enumi}{3}\item $\int_0^\pi t\cos^2tdt$
+        \begin{align*}
+            &\int_0^\pi \left(\frac{1}{2}t + \frac{1}{2}t\cos2t\right)dt\\\\
+            &\left[\frac{t^2}{4}\right]_0^\pi + \frac{1}{2}\int_0^\pi t\cos2tdt          & u &= t  & dv &= \cos2tdt \\\\
+            &\frac{\pi^2}{4}+\frac{1}{2}\left[\frac{1}{2}t\sin2t\right]_0^\pi-\frac{1}{2}\int_0^\pi\frac{1}{2}\sin2tdt & du &=dt &v&=\frac{1}{2}\sin{2t}\\\\
+            &\frac{\pi^2}{4}+[0] +\frac{1}{8}\left\bigg[\cos2t\right\bigg]_0^\pi = \frac{\pi^2}{4}
+        \end{align*}
+    \addtocounter{enumi}{3}\item \int$\arctan\sqrt{x}\ dx$
+        \begin{align*}
+            & u = \sqrt{x} & u^2 = x & &2udu=dx 
+        \end{align*}
+        \begin{align*}
+        2\int u\arctan u \ du 
+        \end{align*}
+         \begin{tabular}{c|c}
+            D & I\\ \hline 
+            +\arctan u & $u$\\ \hline
+            -$\frac{1}{1+u^2}$ & $\frac{u^2}{2}$\\
+        \end{tabular}
+        \quad \quad \quad \quad \quad $2\left[\frac{u^2\arctan{u}}{2}\right]-2\int\frac{u^2}{2+2u^2}du$
+        \begin{align*}
+            &= x\arctan\sqrt{x}-\int \left[1-\frac{1}{1+u^2}\right]du\\
+            &= x\arctan{\sqrt{x}}-\sqrt{x}+\arctan{\sqrt{x}} + C\\
+            &= (x+1)\arctan{\sqrt x}-\sqrt{x} + C
+        \end{align*}
+            
+    \addtocounter{enumi}{3}\item 
+    \addtocounter{enumi}{3}\item 
+    \addtocounter{enumi}{3}\item 
+    \addtocounter{enumi}{3}\item 
+    \addtocounter{enumi}{3}\item 
+    \addtocounter{enumi}{3}\item 
+    \addtocounter{enumi}{3}\item 
+    \addtocounter{enumi}{3}\item 
+        
+\end{enumerate}
+
  
 
  
