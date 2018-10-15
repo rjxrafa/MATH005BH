@@ -89,26 +89,44 @@ MATH 005BH - Single Variable Calculus II}
         \begin{align*}
         2\int u\arctan u \ du 
         \end{align*}
-         \begin{tabular}{c|c}
+        \begin{tabular}{c|c}
             D & I\\ \hline 
             +\arctan u & $u$\\ \hline
             -$\frac{1}{1+u^2}$ & $\frac{u^2}{2}$\\
         \end{tabular}
         \quad \quad \quad \quad \quad $2\left[\frac{u^2\arctan{u}}{2}\right]-2\int\frac{u^2}{2+2u^2}du$
         \begin{align*}
-            &= x\arctan\sqrt{x}-\int \left[1-\frac{1}{1+u^2}\right]du\\
-            &= x\arctan{\sqrt{x}}-\sqrt{x}+\arctan{\sqrt{x}} + C\\
+            &= x\arctan\sqrt{x}-\int \left[1-\frac{1}{1+u^2}\right]du\\\\
+            &= x\arctan{\sqrt{x}}-\sqrt{x}+\arctan{\sqrt{x}} + C\\\\
             &= (x+1)\arctan{\sqrt x}-\sqrt{x} + C
+        \end{align*} \newpage
+    \addtocounter{enumi}{3}\item $\int_0^1\frac{1+12t}{1+3t}dt$
+        \begin{align*}
+            \int_0^1 \left(\frac{(12t+4)-3}{3t+1}\right) &= \int_0^1 \left(\frac{4(3t+1)-3}{3t+1}\right) = \int_0^14dt - \int_0^1\frac{3}{3t+1}\\\\
+            4t\bigg|_0^1-\ln|3t+1|\bigg|_0^1 &= 4-0 - (\ln4 - 0) \\
+            &= 4 - \4ln4
+         \end{align*}
+    \addtocounter{enumi}{3}\item $\int\ln\left(x+\sqrt{x^2-1}\right)dx$
+        \begin{align*}
+            u&= \ln{(x+\sqrt{x^2-1})} & dv &= dx \\
+            du&= \frac{1}{x+\sqrt{x^2-1}}\left(1+\frac{2x}{2\sqrt{x^2-1}}\right)dx & v &= x\\
+            du&=\frac{1}{x+\sqrt{x^2-1}}\left(\frac{\sqrt{x^2+1}+x}{\sqrt{x^2-1}}\right)dx\\
+            du&= \frac{1}{\sqrt{x^2-1}}dx\\
+            &=x\ln{(x+\sqrt{x^2-1})}-\int\frac{x}{\sqrt{x^2-1}}\\
+            &=x\ln{(x+\sqrt{x^2-1})}-\sqrt{x^2-1} + C
         \end{align*}
-            
-    \addtocounter{enumi}{3}\item 
-    \addtocounter{enumi}{3}\item 
-    \addtocounter{enumi}{3}\item 
-    \addtocounter{enumi}{3}\item 
-    \addtocounter{enumi}{3}\item 
-    \addtocounter{enumi}{3}\item 
-    \addtocounter{enumi}{3}\item 
-    \addtocounter{enumi}{3}\item 
+    \addtocounter{enumi}{3}\item $\int\sqrt{3-2x-x^2}dx$
+        \begin{align*}
+            \int\sqrt{(3+1)-(x^2+2x+1)}dx &= \int\sqrt{4-(x+1)^2}dx \\
+            &= \int\sqrt{4-4sin^2\theta}(2\cos\theta) d\theta\\
+            4\int\cos^2\theta d\theta = \frac{4}{2}\int(1+\cos2\theta)d\theta &= 2\theta + \frac{2}{2}\sin{2\theta}+C\\
+            2\arcsin{\left(\frac{x+1}{2}\right)}&+\frac{(x+1)(\sqrt{4-(x+1)^2})}{2} + C
+        \end{align*}
+    \addtocounter{enumi}{3}\item $\int^\frac{\pi}{4}_0\tan^3\theta sec^2\theta d\theta$
+    \addtocounter{enumi}{3}\item $\int\theta \tan^2\theta \ d\theta$
+    \addtocounter{enumi}{3}\item $\int x^5 \ e^{-x^3}dx$
+    \addtocounter{enumi}{3}\item $\int\frac{1}{x\sqrt{4x+1}}dx$
+    \addtocounter{enumi}{3}\item $\int x^2\sinh{mx}dx$
         
 \end{enumerate}
 
