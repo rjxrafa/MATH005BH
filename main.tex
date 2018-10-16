@@ -172,7 +172,65 @@ MATH 005BH - Single Variable Calculus II}
         \end{equation*}
 \end{enumerate}
 
- 
+\newpage
+\section{7.8  Improper Integrals} 1-41 EOO
+
+\begin{enumerate}
+    \item Explain why each of the following integrals is improper
+        \begin{enumerate}
+            \item 
+                $\int_1^2\frac{x}{x-1}dx$ 
+                \\\\\textt{This is a discontinuous integral, since bound includes vertical asymptote x = 1}
+            \item 
+                $\int^\infty_0\frac{1}{1+x^3}dx$
+                \\\\\textt{This is also a infinite integral. As x approaches infinity, the integral converges.}
+            \item 
+                $\int_{-\infty}^\infty x^2e^{-x^2}dx$
+                \\\\\textt{This integral has an infinite bound on both ends, making it an infinite integral.}
+            \item
+                $\int_0^\frac{\pi}{4}\cot{x}dx$
+                \\\\\textt{This is an discontinuous integral as x \xrightarrow{}0,  \ $\cot{x}$ approaches infinity}
+        \end{enumerate}
+
+    \addtocounter{enumi}{3}\item $\int^\infty_3\frac{1}{(x-2)^\frac{3}{2}}dx$
+        \begin{align*}
+            \lim_{t\to\infty}\int^t_3\frac{1}{(x-2)^{\frac{3}{2}}} = \lim_{t\to\infty}-2(x-2)^{-\frac{1}{2}}\bigg|_3^t = \lim_{t\to\infty}\left[-\frac{2}{\sqrt{t-2}}+\frac{2}{\sqrt{1}}\right] = 0+2= 0
+        \end{align*}
+    \addtocounter{enumi}{3}\item $\int^\infty_2e^{-5p}dp$    
+        \begin{align*}
+            \lim_{t\to\infty}\int^t_2e^{-5p}dp = \lim_{t\to\infty}\left[-\frac{1}{5}e^{-5p}\right]^t_2 = \lim_{t\to\infty}\left[-\frac{1}{5}e^{-5t}+\frac{1}{5}e^{-10}\right] = 0 + \frac{1}{5}e^{-10}
+        \end{align*}\newpage
+    \addtocounter{enumi}{3}\item $\int^\infty_{-\infty}xe^{-x^2}dx$
+        \begin{align*}
+            u = -x^2 \\ -\frac{1}{2}du = xdx\\
+            -\frac{1}{2}\int^\infty_{-\infty}e^udu = -\frac{1}{2}\left[\int^\infty_{0}e^udu+\int^0_{-\infty}e^udu\right]\\\\
+            = -\frac{1}{2}\left[(e^{-\infty^2}-e^{-0^2})+(e^{-0^2}-e^{-\infty^2})\right] \\\\ = -\frac{1}{2}\left[(0-1)+(1-0)\right] \\
+            = \frac{1}{2} - \frac{1}{2} = 0
+        \end{align*}
+    \addtocounter{enumi}{3}\item $\int^\infty_1\frac{1}{x^2+x}dx$
+        \begin{align*}
+            \lim_{t\to\infty}\int_1^t\frac{1}{x(x+1)}dx\\
+            A(x+1) + B(x) = 1; A = 1, B = -1\\\\
+            \lim_{t\to\infty}\left[\int_1^t\left(\frac{1}{x}-\frac{1}{1+x}dx\right)\right]\\\\
+            \lim_{t\to\infty}\left[\ln{|x|}-\ln{(|1+x|)}\right]_1^t = \lim_{t\to\infty}\left[\ln{\left|\frac{x}{1+x}\right|}\right]_1^t\\\\
+            \lim_{t\to\infty}\left[\ln{\frac{t}{1+t}}-\ln{\frac{1}{1+1}}\right] = 0 - \ln{\frac{1}{2}}
+        \end{align*}\newpage
+    \addtocounter{enumi}{3}\item $\int^\infty_1\frac{\ln{x}}{x}dx$
+        \begin{align*}
+            u = \ln{x} && du = \frac{1}{x}dx
+        \end{align*}
+        \begin{equation*}
+            \int^\infty_1 udu = \lim_{t\to\infty}\int^t_1udu = \lim_{t\to\infty}\left[\frac{u^2}{2}\right]_1^t
+        \end{equation*}
+        \begin{equation*}
+            \lim_{t\to\infty}\left[\frac{(\ln{t})^2}{2}-\frac{1}{2}\right] = \infty
+        \end{equation*}
+    \addtocounter{enumi}{3}\item $\int^\infty_0e^{-\sqrt{y}}dy$
+    \addtocounter{enumi}{3}\item $\int^{14}_{-2}\frac{dx}{\sqrt[4]{x+2}}$    
+    \addtocounter{enumi}{3}\item $\int_0^9\frac{1}{\sqrt[3]{x-1}}dx$
+    \addtocounter{enumi}{3}\item $\int_0^1r\ln{r}dr$
+    \addtocounter{enumi}{3}\item $S=\{\ (x,y) \  | \ x \geq 1, 0 \leq y, \leq e^{-x}\}$
+\end{enumerate}
 
  
 % --------------------------------------------------------------
