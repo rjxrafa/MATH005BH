@@ -121,13 +121,55 @@ MATH 005BH - Single Variable Calculus II}
             &= \int\sqrt{4-4sin^2\theta}(2\cos\theta) d\theta\\
             4\int\cos^2\theta d\theta = \frac{4}{2}\int(1+\cos2\theta)d\theta &= 2\theta + \frac{2}{2}\sin{2\theta}+C\\
             2\arcsin{\left(\frac{x+1}{2}\right)}&+\frac{(x+1)(\sqrt{4-(x+1)^2})}{2} + C
-        \end{align*}
+        \end{align*} \newpage
     \addtocounter{enumi}{3}\item $\int^\frac{\pi}{4}_0\tan^3\theta sec^2\theta d\theta$
+        \begin{align*}
+            u = \tan{\theta}, du = \sec^2\theta d \theta\\
+            \int^\frac{\pi}{4}_0 u^3du = \left[\frac{u^4}{4}\right]_0^\pi = \frac{1}{4}
+        \end{align*}
     \addtocounter{enumi}{3}\item $\int\theta \tan^2\theta \ d\theta$
+        \begin{align*}
+            &\int\theta(\sec^2\theta-1) d\theta\\
+            u &= \theta  &dv =(\sec^2\theta-1)\\
+            du &= d\theta &v =(\tan\theta-\theta)\\
+            &=\theta\tan\theta-\theta^2-\int (\tan\theta-\theta)d\theta \\
+            &= \theta\tan\theta-\theta^2-\ln{|\sec{\theta}|}+\frac{\theta^2}{2} \\
+            &= \theta\tan\theta-\frac{\theta^2}{2}-\ln{|\sec{\theta}|}+C             
+        \end{align*}
     \addtocounter{enumi}{3}\item $\int x^5 \ e^{-x^3}dx$
+        \begin{align*}
+            u &= -x^3 &-\frac{1}{3}du &= x^2dx\\
+            \int x^3x^2e^udx = \frac{1}{3}\int u\cdot e^u du\\
+            \alpha &= u &d\beta &= e^u\\
+            d\alpha &= 1 &\beta &= e^u\\
+            =\frac{1}{3}\left[(-x^3)e^{-x^3} - e^{-x^3}\right] + C\\
+            =-\frac{1}{3}\left[e^{-x^3}(x^3+1)\right] + C\\
+        \end{align*}\newpage
     \addtocounter{enumi}{3}\item $\int\frac{1}{x\sqrt{4x+1}}dx$
-    \addtocounter{enumi}{3}\item $\int x^2\sinh{mx}dx$
-        
+        \begin{align*}
+            &u = \sqrt{4x+1} & u^2=4x+1 && \frac{1}{2}udu=dx &&x=\frac{u^2-1}{4}
+        \end{align*}
+        \begin{align*}
+            \frac{1}{2}\int\frac{u}{(x)u}du = \frac{1}{2}\int\frac{4}{u^2-1}du
+        \end{align*}
+        \begin{align*}
+            A(u+1)+B(u-1)=4 && A = 2 && B = -22 &
+        \end{align*}
+        \begin{align*}
+            \frac{1}{2}\int\frac{2}{u-1}du-\frac{1}{2}\int\frac{2}{u+1} du\\\\
+            \ln{|\sqrt{4x-1}-1|} - \ln{|\sqrt{4x-1}+1|} + C             
+        \end{align*}
+    \addtocounter{enumi}{3}\item $\int x^2\sinh{mx}dx$\newline\newline
+        \begin{tabular}{c|c}
+            D & I \\\hline
+            $+x^2$  & $\sinh{mx}$\\\hline
+            $-2x$ & $\frac{1}{m}\cosh{mx}$\\\hline
+            $+2$ & $\frac{1}{m^2}\sinh{mx}$\\\hline
+            $-0$ & $\frac{1}{m^3}\cosh{mx}$\\\hline
+        \end{tabular}
+        \begin{equation*}
+            \frac{x^2}{m}\cosh{mx}-\frac{2x}{m^2}\sinh{mx}+\frac{2}{m^3}\cosh{mx}+C
+        \end{equation*}
 \end{enumerate}
 
  
