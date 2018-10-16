@@ -1,7 +1,8 @@
 \documentclass[12pt]{article}
  
 \usepackage{amsmath,amsthm,amssymb}
- 
+\usepackage{graphicx} 
+\graphicspath{{./images/}}
 \begin{document}
  
 %\renewcommand{\qedsymbol}{\filledbox}
@@ -12,31 +13,6 @@ MATH 005BH - Single Variable Calculus II}
  
 \maketitle
  
-\newpage
-
-\begin{enumerate}
-    \item $\int (1+x)(1+x^2)dx$
-        \begin{align*}
-             &=\int dx + \int x^2dx + \int dx + \int x^3dx \\
-             &= x +\frac{x^3}{3} + \frac{x^2}{2} + \frac{x^4}{4} + C 
-        \end{align*}
-        
-    \item $\int \frac{1+2x+2x^2}{x^2}dx$
-        \begin{align*}
-            &= \int \left(\frac{1}{x^2}+\frac{2}{x}+2\right)dx\\
-            &= -\frac{1}{x}+2\ln|x|+2x+C
-        \end{align*}
-
-    \item $\int \frac{xdx}{9-4x^2}$
-        \begin{align*}
-            u &= 9-4x^2\\
-            -\frac{1}{8}du &= xdx\\
-            &= -\frac{1}{8}\int\frac{du}{u}\\
-            &= -\frac{1}{8}\left(ln|9-4x^2|\right)+C\\
-        \end{align*}
-    
-\end{enumerate}
-
 \newpage
 \section{7.5 Techniques of Integration} 1-53 EOO
 
@@ -226,15 +202,98 @@ MATH 005BH - Single Variable Calculus II}
             \lim_{t\to\infty}\left[\frac{(\ln{t})^2}{2}-\frac{1}{2}\right] = \infty
         \end{equation*}
     \addtocounter{enumi}{3}\item $\int^\infty_0e^{-\sqrt{y}}dy$
+        \begin{align*}
+            u = -\sqrt{y} && -2\sqrt{y}du = dy && 2udu = dy 
+        \end{align*}
+        \begin{tabular}{c|c}
+            D & I \\\hline
+            $+u$ & $e^u$\\
+            $-1$ & $e^u$\\
+            $+0$ & $e^u$
+        \end{tabular}
+        \quad\quad
+        $\lim_{t\to\infty}2\int_0^te^uudu = \lim_{t\to\infty}2\left[u e^u-e^u\right]$\\
+        \begin{multline*}
+            \lim_{t\to\infty} \left[-2\sqrt{y}e^{-\sqrt{y}}-2e^{-\sqrt{y}}\right]_0^t = \lim_{t\to\infty} \left[-2\sqrt{t}e^{-\sqrt{t}}-2e^{-\sqrt{t}}+2\right] = 2
+        \end{multline*}
+        \begin{align*}
+            \lim_{t\to\infty}-\frac{2\sqrt{t}}{e^{\sqrt{t}}}\overset{H}{=}\lim_{t\to\infty}-\frac{\frac{2}{2\sqrt{t}}}{\frac{1}{2\sqrt{t}}e^{\sqrt{t}}} = \lim_{t\to\infty}\frac{-2}{e^{\sqrt{t}}}=0    
+        \end{align*}
     \addtocounter{enumi}{3}\item $\int^{14}_{-2}\frac{dx}{\sqrt[4]{x+2}}$    
-    \addtocounter{enumi}{3}\item $\int_0^9\frac{1}{\sqrt[3]{x-1}}dx$
+        \begin{align*}
+            \lim_{t\to -2^+}\int_t^{14}\frac{dx}{\sqrt[4]{x+2}} = \lim_{t\to -2^+}\int_t^{14}\frac{4u^3du}{u}=\lim_{t\to -2^+}4\int_t^{14}u^2du
+        \end{align*}
+        \begin{align*}
+            u = \sqrt[4]{x+2} \to 4u^3du = dx
+        \end{align*}
+        \begin{align*}
+            \lim_{t\to -2^+}4\left[\frac{u^3}{3}\right]_t^{14}
+            =\lim_{t\to -2^+}4\left[\frac{(\sqrt[4]{x+2})^{3}}{3}\right]_t^{14}=\lim_{t\to -2^+}4\left[\frac{8}{3}-\frac{(\sqrt[4]{t+2})^3}{3}\right]= \frac{32}{3}
+        \end{align*}\newpage
+    \addtocounter{enumi}{3}\item $\int_0^9\frac{1}{\sqrt[3]{x-1}}dx$\
+        \begin{align*}
+            \lim_{t\to 1^-}\left(\int_0^t\frac{dx}{\sqrt[3]{x-1}}\right)
+            +\lim_{t\to 1+}\left(\int_t^9\frac{dx}{\sqrt[3]{x-1}}\right)
+        \end{align*}
+        \begin{align*}
+            u = \sqrt[3]{x-1} \to 3u^2du = dx
+        \end{align*}
+        \begin{align*}
+            \lim_{t\to 1^-}\left(\int_0^t\frac{3u^2du}{u}\right) 
+            =\lim_{t\to 1^-} \left[\frac{3u^2}{2}\right]_0^t
+            =\lim_{t\to 1^-} \left[\frac{3(x-1)^{\frac{2}{3}}}{2}\right]_0^t 
+            = -\frac{3}{2}\\
+            \lim_{t\to 1^+}\left(\int_t^9\frac{3u^2du}{u}\right) 
+            =\lim_{t\to 1^+} \left[\frac{3u^2}{2}\right]_t^9
+            =\lim_{t\to 1^+} \left[\frac{3(x-1)^{\frac{2}{3}}}{2}\right]_t^9 
+            = 6
+        \end{align*}
+        \begin{align*}
+            6-\frac{3}{2} = \frac{12}{2}-\frac{3}{2} = \frac{9}{2}
+        \end{align*}
     \addtocounter{enumi}{3}\item $\int_0^1r\ln{r}dr$
+        \begin{align*}
+            \lim_{t\to 0^+}\int_t^1r\ln{r}dr
+        \end{align*}
+        \begin{align*}
+            u &= \ln{r} & dv &= rdr\\
+            du &= \frac{dr}{r} & v &=\frac{r^2}{2}
+        \end{align*}
+        \begin{align*}
+            \lim_{t\to 0^+}\left[\frac{r^2\ln{r}}{2}-\frac{1}{2}\int^1_trdr\right]^1_t 
+            = \left[0-\frac{1}{4}\right]-\left[0-0\right]=-\frac{1}{4}
+        \end{align*}\newpage
     \addtocounter{enumi}{3}\item $S=\{\ (x,y) \  | \ x \geq 1, 0 \leq y, \leq e^{-x}\}$
+        \begin{align*}
+            \int_1^\infty e^{-x}dx=\lim_{t\to\infty}\int^t_1e^{-x}dx=\lim_{t\to\infty}-e^{-x}\bigg|_1^t = \lim_{t\to\infty}\left[-e^{-t}+e^{-1}\right]=[0+e^{-1}]
+        \end{align*}
 \end{enumerate}
+    \includegraphics[width=\textwidth]{41}
+ 
+ 
+\newpage
+\section{More Practice with Integrals}
 
- 
-% --------------------------------------------------------------
-%     You don't have to mess with anything below this line.
-% --------------------------------------------------------------
- 
+\begin{enumerate}
+    \item $\int (1+x)(1+x^2)dx$
+        \begin{align*}
+             &=\int dx + \int x^2dx + \int dx + \int x^3dx \\
+             &= x +\frac{x^3}{3} + \frac{x^2}{2} + \frac{x^4}{4} + C 
+        \end{align*}
+        
+    \item $\int \frac{1+2x+2x^2}{x^2}dx$
+        \begin{align*}
+            &= \int \left(\frac{1}{x^2}+\frac{2}{x}+2\right)dx\\
+            &= -\frac{1}{x}+2\ln|x|+2x+C
+        \end{align*}
+
+    \item $\int \frac{xdx}{9-4x^2}$
+        \begin{align*}
+            u &= 9-4x^2\\
+            -\frac{1}{8}du &= xdx\\
+            &= -\frac{1}{8}\int\frac{du}{u}\\
+            &= -\frac{1}{8}\left(ln|9-4x^2|\right)+C\\
+        \end{align*}
+    
+\end{enumerate}
 \end{document}
