@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+
+\title{Homework 9 7.8II, 11.1I, 11.1II}
+\author{Rafael Betita\\
+MATH 005BH - Single Variable Calculus II}
+
+\begin{document}
+\maketitle
+
+\newpage\section{Section 7.8 II }
+p.575 (49, 50, 51, 55, 57)
+\begin{enumerate}
+    \addtocounter{enumi}{48}
+    \item$\int_0^\infty\frac{x}{x^3+1}dx$
+        \begin{align*}
+            \frac{x}{x^3+1} \leq \frac{x}{x^3} && \frac{x}{x^3} = \frac{1}{x^2}
+            && \int_1^\infty\frac{1}{x^2} \text{ converges}
+        \end{align*}
+        \begin{align*}
+            \int_0^\infty\frac{x}{x^3+1} = \int_0^1\frac{x}{x^3+1} + \int_1^\infty\frac{x}{x^3+1}
+        \end{align*}
+        \begin{align*}
+            \int_1^\infty\frac{1}{x^2} \text{ converges, therefore }  \int_0^\infty\frac{x}{x^3+1}dx \text{ also converges}
+        \end{align*}
+    \item $\int_1^\infty\frac{1+\sin^2x}{\sqrt{x}}dx$
+        \begin{align*}
+            0 \leq \sin^2x \leq 1 && \int_1^\infty \frac{1+0}{\sqrt{x}} \leq \int_1^\infty \frac{1+\sin^2x}{\sqrt{x}} 
+        \end{align*}
+        \begin{align*}
+             \int_1^\infty \frac{1}{x^{1/2}} \text{ is divergent, therefore, original equation is also divergent}
+        \end{align*}
+    \item $\int_1^\infty\frac{x+1}{\sqrt{x^4-x}}dx$
+        \begin{align*}
+            \frac{x+1}{\sqrt{x^4-x}} \geq 
+            \frac{x}{\sqrt{x^4}} \geq
+            \frac{1}{x^2}
+        \end{align*}
+        \begin{align*}
+            \text{$\int_1^\infty\frac{1}{x^2}$ is divergent, therefore original equation is also divergent}
+        \end{align*}
+    \newpage\addtocounter{enumi}{3}\item $\int_0^\infty\frac{1}{\sqrt{x}(1+x)}dx$ \quad \\\\\textwidth{The interval is improper for two reasons: The interval $[0, \infty)$ is infinite and the integrand has an infinite discontinuity at 0. Evaluate it by expressing it as a sum of improper integrals of Type 2 and Type 1 as follows:}\\
+    \begin{align*}
+        \int_0^\infty\frac{1}{\sqrt{x}(1+x)}dx = && 
+        \int_0^1\frac{1}{\sqrt{x}(1+x)}dx + 
+        \int_1^\infty\frac{1}{\sqrt{x}(1+x)}dx
+    \end{align*}
+    \addtocounter{enumi}{1}\item $\int_0^1\frac{1}{x^p}dx$
+\end{enumerate}
+
+\newpage\section{Section 11.1 I}
+p.744-745 (1,2,5-53 EOO, 73, 75)
+\begin{enumerate}
+    \item 
+    \item
+    \addtocounter{enumi}{2}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{3}\item
+    \addtocounter{enumi}{19}\item
+    \addtocounter{enumi}{1}\item
+    
+    
+\end{enumerate}
+
+\end{document}
