@@ -8,10 +8,10 @@
 \graphicspath{{./images/}}
 
 \title{Homework 10\
-\\7.7 Handout, 11.2-11.4}
+\\11.2-11.4}
 \author{Rafael Betita\\
 MATH 005BH - Single Variable Calculus II}
-\date{October 30, 2018}
+\date{November 1, 2018}
 
 \begin{document}
 \maketitle
@@ -343,19 +343,53 @@ MATH 005BH - Single Variable Calculus II}
             \\\text{$\therefore \sum^\infty_{n=1}\frac{1+\cos{n}}{e^n}$ is convergent by the Comparison Test}
         \end{gather*}
         \item[$15.$]$\sum^\infty_{n=1}\frac{4^{n+1}}{3^n-2}$
+        \begin{gather*}
+            \sum^\infty_{n=1}\frac{4^{n+1}}{3^n-2} > \frac{4^n+1}{3^n}=\frac{4\cdot4^n}{3^n}
+            \\\text{$\sum\frac{4^n+1}{3^n}$ is a divergent geometric series $\frac{4}{3}>1$}
+            \\\text{$\therefore\sum^\infty_{n=1}\frac{4^{n+1}}{3^n-2}$ is divergent by the Comparison Test}
+        \end{gather*}
         \item[$17.$]$\sum^\infty_{n=1}\frac{1}{\sqrt{n^2+1}}$
-        \item[$19.$]$\sum^\infty_{n=1}\frac{n+1}{n^3+n}$
+        \begin{gather*}
+            \sum^\infty_{n=1}\frac{1}{\sqrt{n^2+1}}<\frac{1}{\sqrt{n^2}}=\frac{1}{n}
+            \\\text{$\sum\frac{1}{n}$ is a divergent harmonic series, however it is greater}
+            \\\text{Let's find the limit of both series by using the LCTest.}
+            \\\lim_{n\to\infty}\frac{n}{\sqrt{n^2+1}}=\lim_{n\to\infty}\frac{1}{\sqrt{1+\frac{1}{n^2}}}=\frac{1}{\sqrt{1+0}}=1 > 0
+            \\\text{$\therefore \sum^\infty_{n=1}\frac{1}{\sqrt{n^2+1}}$ is divergent by the Limit Comparison Test.}
+        \end{gather*}
+        \newpage\item[$19.$]$\sum^\infty_{n=1}\frac{n+1}{n^3+n}$
+            \\\\We can use a limit comparison test here, since our denominator does not work well with our comparison test. We will use a known divergent series such as $\frac{1}{n^2}$ to make it easier for us to have an equivalent numerator and denominator.
+            \begin{gather*}
+            \frac{n+1}{n^3+n} \cdot\frac{n^2}{1}=\frac{n^3+n^2}{n^3+n}\cdot\frac{\frac{1}{n^3}}{\frac{1}{n^3}}=\lim_{n\to\infty}\frac{1+\frac{1}{n}}{1+\frac{1}{n^2}}=1 > 0 
+            \\\text{$\therefore \sum^\infty_{n=1}\frac{n+1}{n^3+n}$ diverges by the Limit Comparison Test}
+            \end{gather*}
     \end{enumerate}
     \item Given the three series below. Which one should we use the Integral Test on? The comparison test? The divergence test? Explain why you put each series with the given test, then use the test to determine the convergence or divergence of the series.
     \begin{enumerate}
         \item $\sum^\infty_{n=1}n\sin(\frac{1}{n})$
-        \item $\sum^\infty_{n=1}\frac{6^n}{5^n-1}$
+        \begin{gather*}
+            \text{We use the divergence test to find the limit.}
+            \\\text{We use L'hopital for the indeterminate form.}
+            \\\lim_{n\to\infty}\frac{\sin{\frac{1}{n}}}{\frac{1}{n}}\stackrel{H}{=}\lim_{n\to\infty}\frac{n^{-2}\cos{\frac{1}{n}}}{n^{-2}}=\lim_{n\to\infty}\cos{\frac{1}{n}}=1
+            \\\text{We can conclude that since the limit is nonzero, it is divergent}
+        \end{gather*}
+        \item $\sum^\infty_{n=1}\frac{6^n}{5^n-1}$ 
+        \begin{gather*}
+            \frac{6^n}{5^n-1}>\frac{6^n}{5^n}
+            \\\text{Divergent by the Comparison Test, where $b_n$ is a divergent geometric series.}
+        \end{gather*}
         \item $\sum^\infty_{n=1}\frac{\ln n}{n^2}$
+        \begin{gather*}
+            \text{We use the Integral test. Our bound is $n\geq2$}
+            \\\int_2^\infty\frac{\ln n}{n^2}=\left[-\frac{\ln n}{n}-\frac{1}{n}\right]^\infty_2=\frac{\ln 2}{2}+\frac{1}{2}
+            \\\text{We can now conclude that the series converges to this finite limit.}
+        \end{gather*}
+        
     \end{enumerate}
 \end{enumerate}
 \newpage\section{The Limit Comparison Test}
 \begin{enumerate}
      \addtocounter{enumi}{22}\item When should you use the Limit comparison test? What kind of terms does the comparison test require?
+     \\\\Use limit comparison test when your initial comparison test fails for your geometric/p-series and you can't get the inequality to go to the right direction.
      \item Use the comparison test or the limit comparison test to determine if the following series converge or diverge.
      \begin{enumerate}
          \item do 21-31 odd in 11.4
@@ -378,7 +412,7 @@ MATH 005BH - Single Variable Calculus II}
             \end{gather*}   
             Then $\sum a_n$ is also convergent.
          \end{enumerate}
-         \item (11.4 41)
+         \item (11.4 41) Show that if we want to approximate the sum of the series $\sum_{n=1}^\infty n^-1.001$ so that the error is less than 5 in the ninth decimal place, then we need to add more than $10^11,301$ terms
      \end{enumerate}
 \end{enumerate}
 
