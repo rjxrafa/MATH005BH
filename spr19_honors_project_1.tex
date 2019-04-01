@@ -10,21 +10,24 @@
 Honors Project 1:\\ 
 Newton's Law of Cooling and Mr. Potato Head
 }
-\author{Rafael Betita}
-\date{April 2019}
+\author{Author: Rafael Betita\\Members: Quan Vu, Alex Quintanar\\ Potato \#8}
+
+\date{April 2, 2019}
 
 \begin{document}
 
 \maketitle
 
+
+\newpage
 \section{Preamble}
 
-
-As Pasadena City College's brightest Calculus II students, we have been tasked by the campus police to solve two problems: when the suspicious hot potatoes have been cooked as well as the mystery of the stolen \textbf{\textit{Lancerlite}}. Using our knowledge of differential equations and Newton's Law of Cooling, we present our findings as follows.
+During one faithful morning on the way to our Calculus class, we heard screams of panic coming directly from R216! As the students rushed on over, we found Mr. Potato Head staging a protest right in our very own classroom. In a fit of rage and protest, the suspect had strewn all "hot potatoes" around the classroom to dissuade us from eating the potatoes. Unfortuantely for him, hot potatoes are exactly what hungry students love to eat! While most students were distracted by their hunger, it seems that there was more to the mystery. A strange envelope on the teacher's desk labeled \textbf{TOP SECRET RADIOACTIVE \textit{Lancerlite}} was left empty. What could this mean?\\\newline
+As Pasadena City College's brightest Calculus II students, we have been tasked by the campus police to solve two problems: when the suspicious hot potatoes were been cooked as well as the mystery of the stolen \textbf{\textit{Lancerlite}}. Using our knowledge of differential equations we will procedurally derive each solution from Newton's Law of Cooling and the Exponential Rate of Decay in order to solve these problems. With our solutions, we will be able to ascertain as to exactly when the potatoes were cooked which will lead us to exactly when our suspect, Mr. Potato Head, stole the radioactive \textbf{\textit{Lancerlite}}!
 
 \section{The Potato Incident}
 
-At approximately 10am, we find ourselves upon a peculiar incident. Our suspect Mr. Potato Head had dispatched a number of "hot potatoes" to prevent the hungry students of Math005BH from eating them. Unbeknownst to him, hot potatoes are considered a delicacy amongst the students. As we bide our time waiting for the hot potatoes to cool, we decide to take some measurements to put our differential skills to the test. With enough data points, we should be able to ascertain as to when the potatoes have been cooked! 
+At approximately 10am, we find ourselves upon a peculiar incident. Our suspect Mr. Potato Head had dispatched a number of "hot potatoes" to prevent the hungry students of MATH005BH from eating them. Unbeknownst to him, hot potatoes are considered a delicacy amongst the students. As we bide our time waiting for the hot potatoes to cool, we decide to take some measurements to put our differential skills to the test. With enough data points, we should be able to ascertain as to when the potatoes have been cooked! 
 
 \subsection{Newton's Law of Cooling}
 
@@ -32,20 +35,17 @@ As we all know, the rate of cooling for an object is directly proportional to th
 
 
 \begin{align*}
-    \frac{dT}{dt}=k(T-T_s) \qquad\qquad
-    \begin{tabular}{c|c}
-     Variables & Definition  \\ \hline
-     $dT$ & \text{Rate of change in Temperature} \\\hline 
-     $dt$ & \text{Rate of change in time} \\\hline
-     $k$ & \text{Cooling constant (rate of growth)} \\\hline
-     $T_s$ & \text{Temperature (of surrounding)}\\\hline
-\end{tabular}
+    \frac{dT}{dt}=k(T-T_s) \\
 \end{align*}
-
-\begin{center}
-    
+\begin {center}
+	\begin{tabular}{c|c}
+	     Variables & Definition  \\ \hline
+	     $dT$ & \text{Rate of change in Temperature} \\\hline 
+	     $dt$ & \text{Rate of change in time} \\\hline
+	     $k$ & \text{Cooling constant (rate of growth)} \\\hline
+	     $T_s$ & \text{Temperature (of surrounding)}\\\hline
+	\end{tabular}
 \end{center}
-
 \newpage
 \subsection{Solving our Differential Equation}
 Using Newton's Law of Cooling, our goal is to find a solution for the differential equation. This is done by undoing the differential equation using integrals. Steps are as follows.
@@ -101,15 +101,15 @@ Given that $t = 10$ and $C = 75.2$:
     \frac{70}{75.2} &= e^{k\cdot 10}\\[1em]
     \ln{(.93)} &= \ln{(e^{k\cdot 10})}\\[1em]
     -0.0717 &= k \cdot 10 \\[1em]
-    -0.0071 &= k
+    -0.00717 &= k
 \end{align}
 We find our rate of growth to be approximately \boxed{k\approx-0.0071} . We will further verify our findings in the next section below using linear regression modelling.
 
 \subsection{Graph}
 Using linear regression modelling, we interpolate our data onto Desmos. Upon closer insepection, we find our slope to be around $-0.00710714$ on Desmos, very close to our own calculation of $k$. This value can also be expressed by rearranging our original equation as follows:
 \begin{align}
-    ln|T-T_s| &= kt+C\\
-    \frac{ln|T-T_s|}{t}+C &=k
+    \ln|T-T_s| &= kt+C\\
+    \frac{\ln|T-T_s|}{t}+C &=k
 \end{align}
 
 \newpage
@@ -170,18 +170,14 @@ Both answers support our collected measurements!
 \subsection{Analysis}
 Now, while our calculations seem to agree, the time of cooking for the potato seems a bit far-fetched. For the temperature of this particular potato to last so long is somewhat hard to believe but there may be other factors at play we can consider.\\
 
-\begin{wrapfigure}[23]{r}{0.35\textwidth}
+\begin{wrapfigure}[24]{r}{0.32\textwidth}
     \centering
     \includegraphics[height=.5\textheight]{extra.jpg}
     \caption{Testing regression with less data points.}
 \end{wrapfigure}
 
+We postulate: Will the number of collected points affect the overall estimated growth rate? As evident from the figure to the right, leaving all but two points still results in an approximate growth rate of $-0071$. Thus our findings lead us to believe that it is entirely possible for the potatoes to have been cooked 4 hours prior to their discovery. \\
 
-We postulate: Will the number of collected points affect the overall estimated growth rate?
-As evident from the figure to the left, leaving all but two points still results in an
-approximate growth rate of $-0071$. Thus our findings lead us to believe that it is entirely
-possibly for the potatoes to have been cooked 4 hours prior to their discovery. \\
-\newline
 Some other considerations: Another way that the data could have been skewed is based on the
 temperature of the surroundings. Since we found our potatoes to be well secured its foil
 wrapper, we are left to think about the role of the surrounding temperature within our
@@ -193,7 +189,7 @@ move on to our second problem at hand.
 
 \newpage
 \section{The Mystery of the Missing Lancerlite}
-As the faithful students of MATH005BH, it is our responsibility to solve once and for all the mystery of the missing \textit{Lancerlite}. While there isn't much we can do about the missing \textit{Lancerlite}, we can however determine how many hours until the \textit{Lancerlite} becomes explosive. 
+As the faithful students of MATH005BH, it is our responsibility to solve once and for all the mystery of the missing \textbf{\textit{Lancerlite}}. While there isn't much we can do about the missing \textbf{\textit{Lancerlite}}, we can however determine how many hours until the \textbf{\textit{Lancerlite}} becomes explosive. 
 
 \subsection{Exponential Decay}
 We will yet again derive our solution, but this time using our knowledge of exponential decay. Given that the rate of growth/decay is proportional the the remaining mass, we express this relationship as follows:
@@ -224,11 +220,11 @@ Just like in Newton's Law of Cooling, our goal is to find a solution for the giv
     |M_0| &= Ce^{kt}
 \end{align}
 
-We find our solution to be $\boxed{|M_0| &= Ce^{kt}}$.
+We find our solution to be $\boxed{|M_0| = Ce^{kt}}$.
 
 \subsection{Calculations}
 Now that we have a solution to our differential equation,  we can now use it to solve for $k$, the rate of growth. Very much like the first problem, we start by solving for our constant at $t = 0$.\\\\
-Given the assumption that mass of the \textit{Lancerlite} is at 1 (100\%) at $t = 0$:
+Given the assumption that mass of the \textbf{\textit{Lancerlite}} is at 1 (100\%) at $t = 0$:
 \begin{align}
     1 &= Ce^{k(0)}\\
     1 & = C(1)
@@ -238,7 +234,7 @@ Since we find that \boxed{$C = 1$} our constant be cancelled out from the origin
 \begin{align}
     M = e^{kt}    
 \end{align}
-To determine the rate of growth, we need to be able to compare another test point from our initial mass. Luckily, our suspect was kind enough to give us a clue: "The half-life of \textit{Lancerlite} (in hours) is equal to one fifth the number formed by the last two digits of the first year that Jackie Robinson attended PCC." Being the resourceful students that we are, we find that that exact year to be 1937. Using that information we get the half-life in hours to be $\frac{37}{5} = 7.4$ hours!. We can now solve for our rate of growth, using $M_{7.4} = .50$.\\
+To determine the rate of growth, we need to be able to compare another test point from our initial mass. Luckily, our suspect was kind enough to give us a clue: ``The half-life of \textbf{\textit{Lancerlite}} (in hours) is equal to one fifth the number formed by the last two digits of the first year that Jackie Robinson attended PCC.'' Being the resourceful students that we are, we find that that exact year to be 1937. Using that information we get the half-life in hours to be $\frac{37}{5} = 7.4$ hours! We can now solve for our rate of growth, using $M_{7.4} = .50$.\\
 
 Given that the half-life represents 50\% of the mass, we take M to be 0.5:
 \begin{align}
@@ -248,7 +244,7 @@ Given that the half-life represents 50\% of the mass, we take M to be 0.5:
     -0.69 &= 7.4k \\[1em]
     k &= -0.093
 \end{align}
-Now that k is solved for, we can now fully solve for our missing variable $t$. We were informed by the authorities that the \textit{Lancerlite} becomes explosive at 35\% of its original amount. To calculate the time it takes to decay up to that point, we reuse our equation:
+Now that k is solved for, we can now fully solve for our missing variable $t$. We were informed by the authorities that the \textbf{\textit{Lancerlite}} becomes explosive at 35\% of its original amount. To calculate the time it takes to decay up to that point, we reuse our equation:
 \begin{align}
     M &= e^{kt}\\[1em]
     .35 &= e^{-0.093t}\\[1em]
@@ -256,6 +252,6 @@ Now that k is solved for, we can now fully solve for our missing variable $t$. W
     -1.04 &= -0.093k \\[1em]
     t &= 11.28
 \end{align}
-At approximately 11 hours and 17 minutes from the time the \textit{Lancerlite} was stolen, it would have decayed to about 35\% of its mass and become explosive! Given that the \textit{Lancerlite} was removed from its laboratory storage 30 minutes after the potatoes were cooked (5:47am), that would only give the authorities until around 5:30pm to nab that potato fiend! Oh, wait a minute..
+At approximately 11 hours and 17 minutes from the time the \textbf{\textit{Lancerlite}} was stolen, it would have decayed to about 35\% of its mass and become explosive! Given that the \textbf{\textit{Lancerlite}} was removed from its laboratory storage 30 minutes after the potatoes were cooked (5:47am), that would only give the authorities until around 5:30pm to nab that potato fiend! Oh, wait a minute..
 
 \end{document}
