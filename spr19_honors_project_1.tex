@@ -142,10 +142,10 @@ With all of our missing variables ($C$, $k$) found, we can proceed to find out j
     |135| &=  75.2e^{-0.0071\cdot t}\\[1em]
     \frac{135}{75.2} &= e^{-0.0071\cdot t}\\[1em]
     \ln{\left(\frac{135}{75.2}\right)} &= \ln{\left(e^{-0.0071\cdot t}\right)}\\[1em]
-    1.8 &= -0.0071\cdot t\\[1em]
-    t &= -252.85
+    -0.59 &= -0.0071\cdot t\\[1em]
+    t &= -82.41
 \end{align}
-We find that the time elapsed since the potato was $208^\circ$F was approximately 253 minutes ago. This is roughly around 4 hours and 13 minutes upon first measuring the temperature of the potato at 10am, making it 5:47am. Now, either our suspect Mr. Potato Head is an incredibly early riser or something has gone terribly wrong with our findings. We can confirm by evaluating other test points.\\ 
+We find that the time elapsed since the potato was $208^\circ$F was approximately 82 minutes ago. This is roughly around 1 hour and 13 minutes upon first measuring the temperature of the potato at 10am, making the time of cooking at around \boxed {8:47\text{am}} . Seems like our potato friend is quite an early riser! We can confirm by evaluating other test points.\\ 
 
 Given $t=30$:
 \begin{align}
@@ -168,7 +168,7 @@ Both answers support our collected measurements!
 
 \newpage
 \subsection{Analysis}
-Now, while our calculations seem to agree, the time of cooking for the potato seems a bit far-fetched. For the temperature of this particular potato to last so long is somewhat hard to believe but there may be other factors at play we can consider.\\
+Now, while our calculations seem to agree, for the temperature of this particular potato to last so long we have to take a few things into consideration.\\
 
 \begin{wrapfigure}[24]{r}{0.32\textwidth}
     \centering
@@ -176,14 +176,14 @@ Now, while our calculations seem to agree, the time of cooking for the potato se
     \caption{Testing regression with less data points.}
 \end{wrapfigure}
 
-We postulate: Will the number of collected points affect the overall estimated growth rate? As evident from the figure to the right, leaving all but two points still results in an approximate growth rate of $-0071$. Thus our findings lead us to believe that it is entirely possible for the potatoes to have been cooked 4 hours prior to their discovery. \\
+We postulate: Will the number of collected points affect the overall estimated growth rate? As evident from the figure to the right, leaving all but two points still results in an approximate growth rate of $-0.0071$. Thus our findings lead us to believe that it is entirely possible for the potatoes to have been cooked an hour or so prior to their discovery. \\
 
-Some other considerations: Another way that the data could have been skewed is based on the
+Some other considerations: One way that the data could have been skewed is based on the
 temperature of the surroundings. Since we found our potatoes to be well secured its foil
-wrapper, we are left to think about the role of the surrounding temperature within our
+container, we are left to think about the role of the surrounding temperature within our
 calculations. We are entirely under the assumption that our potato has been sitting in a room
-of $73^{\circ}F$. Were this not the case, it is also entirely possible that the potato could
-have possibly been transported from different surroundings with different temperatures. Either
+of $73^{\circ}F$. It is entirely possible that the potato could have possibly been transported
+ from different surroundings with different temperatures. Either
 way, at this point it is mere conjecture and is left up to the reader's own imagination. We now
 move on to our second problem at hand.
 
@@ -244,14 +244,18 @@ Given that the half-life represents 50\% of the mass, we take M to be 0.5:
     -0.69 &= 7.4k \\[1em]
     k &= -0.093
 \end{align}
-Now that k is solved for, we can now fully solve for our missing variable $t$. We were informed by the authorities that the \textbf{\textit{Lancerlite}} becomes explosive at 35\% of its original amount. To calculate the time it takes to decay up to that point, we reuse our equation:
+Now that k is solved for, we can now fully solve for our missing variable $t$. We were informed by the authorities that the \textbf{\textit{Lancerlite}} becomes explosive at 35\% of its original amount. To calculate the time it takes to decay up to that point, we reuse our equation where $M = .35$ with $k = -0.093$ :
 \begin{align}
     M &= e^{kt}\\[1em]
     .35 &= e^{-0.093t}\\[1em]
-    \ln(.35) &= \ln(e^{7.4k})\\[1em]
-    -1.04 &= -0.093k \\[1em]
+    \ln(.35) &= \ln(e^{-0.093t})\\[1em]
+    -1.04 &= -0.093t \\[1em]
     t &= 11.28
 \end{align}
-At approximately 11 hours and 17 minutes from the time the \textbf{\textit{Lancerlite}} was stolen, it would have decayed to about 35\% of its mass and become explosive! Given that the \textbf{\textit{Lancerlite}} was removed from its laboratory storage 30 minutes after the potatoes were cooked (5:47am), that would only give the authorities until around 5:30pm to nab that potato fiend! Oh, wait a minute..
+Since we used $t$ as hours to determine our k, we get $t$ as the time in hours. We make a quick conversion for .28 hours to minutes as follows:
+\begin{align}
+	\frac{.28 \text{ hour}}{1} \times \frac{60 \text{ minutes}}{\text{hour}} \approx 16.8 \text{ minutes}
+\end{align}
+At approximately 11 hours and 17 minutes from the time the \textbf{\textit{Lancerlite}} was stolen, it would have decayed to about 35\% of its mass and become explosive! Given that the \textbf{\textit{Lancerlite}} was removed from its laboratory storage 30 minutes after the potatoes were cooked (8:47am), that would only give the authorities until around 8:30pm to nab that potato fiend! Oh, wait a minute..
 
 \end{document}
